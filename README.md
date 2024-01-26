@@ -114,3 +114,8 @@ The log will be like the following.
 <!DOCTYPE html></html>
 ...
 ```
+
+## References
+
+* NodeJS version for Server API ([acw-sc-v2.js](https://github.com/WangYihang/acw-sc-v2.js))
+* GoLang version for client code ([acw-sc-v2-go](https://github.com/WangYihang/acw-sc-v2-go))
