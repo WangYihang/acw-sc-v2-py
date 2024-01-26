@@ -1,6 +1,31 @@
-# Python requests.HTTPAdapter for `acw_sc__v2` cookie
+# Python requests.HTTPAdapter for `acw_sc__v2`
 
-## Quick Start
+`acw_sc__v2` is a cookie used by some websites to prevent crawlers.
+When the website detects that the request is sent by a crawler, it returns a javascript challenge. The crawler needs to solve the challenge and resend the request with the cookie set to the challenge value.
+This project provides a Python requests.HTTPAdapter to resolve the challenge automatically.
+
+## Usage
+
+```bash
+pip install acw-sc-v2-py
+```
+
+```python
+import requests
+
+session = requests.Session()
+
+# add the following code to your original requests code
+from acw_sc_v2_py import acw_sc__v2 
+adapter = acw_sc__v2.AcwScV2Adapter()
+session.mont("http://", adapter)
+session.mount("https://", adapter)
+
+response = session.get("https://www.example.com/")
+print(response.text)
+```
+
+## Use Case
 
 ### Before using `acw-sc-v2-py`
 
