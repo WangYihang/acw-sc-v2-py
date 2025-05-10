@@ -18,7 +18,7 @@ session = requests.Session()
 # add the following code to your original requests code
 from acw_sc_v2_py import acw_sc__v2 
 adapter = acw_sc__v2.AcwScV2Adapter()
-session.mont("http://", adapter)
+session.mount("http://", adapter)
 session.mount("https://", adapter)
 
 response = session.get("https://www.example.com/")
@@ -66,7 +66,7 @@ session = requests.Session()
 adapter = acw_sc__v2.AcwScV2Adapter()
 
 # step 3: mount adapter
-session.mont("http://", adapter)
+session.mount("http://", adapter)
 session.mount("https://", adapter)
 
 for i in range(8):
@@ -94,7 +94,7 @@ from acw_sc_v2_py import acw_sc__v2
 session = requests.Session()
 
 adapter = acw_sc__v2.AcwScV2Adapter()
-session.mont("http://", adapter)
+session.mount("http://", adapter)
 session.mount("https://", adapter)
 
 for i in range(8):
