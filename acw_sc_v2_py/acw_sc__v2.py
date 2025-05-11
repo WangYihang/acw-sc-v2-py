@@ -16,8 +16,12 @@ from http.cookies import SimpleCookie
 class AcwScV2Adapter(HTTPAdapter):
     ACW_SC__V2_COOKIE_VALUE = None
 
+    def __init__(self, *args, acw_sc_v2_solver_url="https://acw-sc-v2.authu.online/", **kwargs):
+        super(AcwScV2Adapter, self).__init__(*args, **kwargs)
+        self.acw_sc_v2_solver_url = acw_sc_v2_solver_url
+
     def _generate_cookie(self, html):
-        return requests.post("https://acw-sc-v2.authu.online/", data={"data": html}).text.strip()
+        return requests.post(self.acw_sc_v2_solver_url, data={"data": html}).text.strip()
 
     def _parse_cookie(self, cookie):
         simple_cookie = SimpleCookie()

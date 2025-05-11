@@ -34,7 +34,7 @@ def handle():
     session = requests.Session()
 
     # add the following three lines
-    adapter = acw_sc__v2.AcwScV2Adapter()
+    adapter = acw_sc__v2.AcwScV2Adapter(acw_sc_v2_solver_url="http://localhost:3000/")
     session.mount("http://", adapter)
     session.mount("https://", adapter)
 

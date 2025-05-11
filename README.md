@@ -10,6 +10,14 @@ This project provides a Python requests.HTTPAdapter to resolve the challenge aut
 pip install acw-sc-v2-py
 ```
 
+```bash
+# start acw_sc_v2_solver
+git clone https://github.com/WangYihang/acw-sc-v2.js.git
+cd acw-sc-v2.js
+npm install
+node app.js
+```
+
 ```python
 import requests
 
@@ -17,7 +25,7 @@ session = requests.Session()
 
 # add the following code to your original requests code
 from acw_sc_v2_py import acw_sc__v2 
-adapter = acw_sc__v2.AcwScV2Adapter()
+adapter = acw_sc__v2.AcwScV2Adapter(acw_sc_v2_solver_url="http://localhost:3000/")
 session.mount("http://", adapter)
 session.mount("https://", adapter)
 

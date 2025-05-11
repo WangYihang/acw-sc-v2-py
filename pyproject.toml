@@ -1,15 +1,9 @@
-[tool.poetry]
+[project]
 name = "acw-sc-v2-py"
-version = "0.0.5"
-description = ""
-authors = ["Yihang Wang <wangyihanger@gmail.com>"]
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.31.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.3",
+]
